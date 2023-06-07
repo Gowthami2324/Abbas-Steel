@@ -1,0 +1,163 @@
+﻿DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Stainless Steel Fabrication Company</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <header class="header1">
+        <div class="container1">
+            <div class="logo">
+                <img class="logo" src=" C:\Users\acer\Pictures\abbas steel 1.png" />
+            </div>
+            <div class="header1-text">
+                <ul>
+                    <a class="icons" href="#"><i class="fa fa-map-marker" aria-hidden="true" style="font-size:1.75em"></i></a>
+                    <li id="location" class="vl">
+                        Al Qusais Ind Area 1,<br />
+                        Factory Number 45, 242<br> Community Number, Street<br>Number 25, Doha Road
+                    </li>
+
+                    <a class="icons" href="#"><i class="fa fa-phone" aria-hidden="true" style="font-size:1.75em"></i></a>
+                    <li id="phone" class="vl">
+                        +971 42671200<br />
+                        info@abbasmetal.com
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+    <div class="header2">
+        <main class="body-container">
+            <nav>
+                <ul>
+                    <li><a href="#">Home</li>
+                    <li><a href="#">About Us</li>
+                    <li><a href="#">Services</li>
+                    <li><a href="#">Product Gallery</li>
+                    <li><a href="#">Projects</li>
+                    <li><a href="#">Certification</li>
+                    <li><a href="#">Contact Us</li>
+                </ul>
+
+            </nav>
+
+            <div class="social icons">
+                <a id="res" href="https://www.facebook.com/AbbasSteelIndustries"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                <a id="res" href="https://www.linkedin.com/authwall?trk=gf&trkInfo=AQFJISFuEkUklgAAAYh6jn74Gbhjjsd0mCW3ctRO7xCAq3vaFS5ZTjnIV_knEuMH73NB-RCd3oG3q6RI3KOWm7GFEhGg7A8UOoA-RchNviXiFq6GyZUeWRg_W6N_-0XfJs3CEuA=&original_referer=https://abbasmetal.com/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fcompany%2Fabbas-steel-industries%2F"><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                <a id="res" href="https://www.instagram.com/abbassteel_industries/"<i class="fa fa-instagram" aria-hidden="true"></i></a>
+
+            </div>
+
+    </div>
+    <div class="slider">
+
+        <div class="slide active">
+            <img src="C:\Users\acer\Pictures\steel img.jpg" />
+
+            <div class="info">
+                <p>Structural Steel Fabrication</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="C:\Users\acer\Pictures\abaa-img.jpg" />
+
+            <div class="info">
+                <p>Tanks Fabrication</p>
+            </div>
+        </div>
+
+        <div class="slide">
+            <img src="C:\Users\acer\Pictures\steel 1.jfif" />
+
+            <div class="info">
+                <p>Structural Steel Fabrication</p>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <i class="fa fa-chevron-left next-btn" aria-hidden="true"></i>
+            <i class="fa fa-chevron-right prev-btn" aria-hidden="true"></i>
+        </div>
+
+    </div>
+    <script type="text/javascript">
+        const slider = document.queryselector(".slider");
+        const nextbtn = document.queryselector(".next-btn");
+        const prevbtn = document.queryselector(".prev-btn");
+        const slides = document.queryselectorall(".slide");
+        const numberofslides = slides.length;
+        var slidenumber = 0;
+
+
+
+        //image slider next button//
+        nextbtn.addeventlistener("click", () => {
+            slides.foreach((slide) => {
+                slide.classlist.remove("active");
+            })
+
+            slidenumber++;
+
+            if (slidenumber > (numberofslides - 1)) {
+                slidenumber = 0;
+            }
+
+            slides[slidenumber].classlist.add("active");
+        });
+        //image slider previous button
+        prevbtn.addeventlistener("click", () => {
+            slides.foreach((slide) => {
+                slide.classlist.remove("active");
+            })
+
+            slidenumber--;
+
+            if (slidenumber < 0) {
+                slidenumber = numberofslides - 1;
+            }
+
+            slides[slidenumber].classlist.add("active");
+        });
+
+        var playslider;
+        var repeater = () => {
+            playslider = setinterval(function () {
+
+                slides.foreach((slide) => {
+                    slide.classlist.remove("active");
+                });
+
+                slidenumber++;
+
+                if (slidenumber > (numberofslides - 1)) {
+                    slidenumber = 0;
+                }
+
+                slides[slidenumber].classlist.add("active");
+            }, 1000);
+
+
+        }
+        repeater();
+
+
+        //stop the image slider autoplay on mouseover
+        slider.addeventlistener("mouseover", () => {
+            clearinterval(playslider);
+        });
+        //start the image slider autoplay again mouseout
+        slider.addeventlistener("mouseover", () => {
+            repeater();
+        });
+
+    </script>
+    </main>
+
+
+</body>
+</html>
